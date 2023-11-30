@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 def magic_calculation(a, b):
+
     """Match bytecode provided by the Alx School"""
     from magic_calculation_102 import add, sub
 
