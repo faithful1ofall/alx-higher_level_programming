@@ -4,10 +4,10 @@ def weight_average(my_list=[]):
         return 0
 
     fnum = 0
-    fen = 0
+    den = 0
 
-    for f in my_list:
-        num += f[0] * f[1]
-        fen += f[1]
+    for tup in my_list:
+        fnum += tup[0] * tup[1]
+        den += tup[1]
 
-    return (fnum / fen)
+    return (fnum / den)
