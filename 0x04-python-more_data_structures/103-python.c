@@ -4,7 +4,7 @@
 /**
  * print_python_bytes - Prints bytes info
  * @p: Python Objects
- * Return: no return or void return 
+ * Return: no return or void return
  */
 void print_python_bytes(PyObject *p)
 {
