@@ -2,7 +2,7 @@
 
 def update_dictionary(a_dictionary, key, value):
     """
-    A function that updates key/values 
+    A function that updates key/values
     in a dictionary.
     """
     a_dictionary[key] = value
