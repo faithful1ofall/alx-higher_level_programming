@@ -17,7 +17,8 @@ void print_python_list(PyObject *p) {
     printf("[*] Size of the Python List = %ld\n", size);
     printf("[*] Allocated = %ld\n", list->allocated);
 
-    printf("Element 0: %s\n", Py_TYPE(list->ob_item[0])->tp_name);
+    if (size > 0)
+        printf("Element 0: %s\n", Py_TYPE(list->ob_item[0])->tp_name);
 }
 
 void print_python_bytes(PyObject *p) {
@@ -32,7 +33,7 @@ void print_python_bytes(PyObject *p) {
 
     bytes = (PyBytesObject *)p;
     size = PyBytes_Size(p);
-    byte_str = bytes->ob_sval;
+    byte_str = PyBytes_AsString(p);
 
     printf("[.] bytes object info\n");
     printf("  size: %ld\n", size);
