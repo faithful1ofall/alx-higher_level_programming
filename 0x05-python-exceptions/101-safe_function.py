@@ -2,12 +2,11 @@
 from __future__ import print_function
 import sys
 
-
 def safe_function(fct, *args):
     try:
-        res = fct(*args)
-    except Exception as e:
-        print("Exception: {}".format(e), file=sys.stderr)
+        fres = fct(*args)
+    except Exception as f:
+        print("Exception: {}".format(f), file=sys.stderr)
         return None
     else:
-        return res
+        return fres
