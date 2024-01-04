@@ -5,7 +5,7 @@ Determines all possible solutions to placing N
 N non-attacking queens on an NxN chessboard.
 
 Example:
-./101-nqueens.py I
+    $ ./101-nqueens.py I
 
 I must be an integer greater than or equal to 4.
 
