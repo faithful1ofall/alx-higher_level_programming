@@ -1,15 +1,25 @@
 #!/usr/bin/python3
-""" Load, add, save  """
-from sys import argv
+"""import json for encoding and decoding the json file
+import sys to help parse through the arguments
+import os.path to help check if the file exists"""
+import json
+import os.path
+import sys
 
+"""importing the necessary modules to help in craeting object from
+JSON file and write an object text file using json representation"""
+enc = __import__('5-save_to_json_file').save_to_json_file
+dec = __import__('6-load_from_json_file').load_from_json_file
 
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+my_list = []
+filename = "add_item.json"
 
-""" Script that adds all arguments to a Python list,
-and then save them to a file """
-try:
-    add_i = load_from_json_file('add_item.json')
-    save_to_json_file(add_i + argv[1:], 'add_item.json')
-except Exception:
-    save_to_json_file(argv[1:], 'add_item.json')
+if os.path.isfile(filename):
+    """decode the json file if the file exists"""
+    my_list = dec(filename)
+
+"""loop through the list of arguments"""
+for arg in sys.argv[1:]:
+    my_list.append(arg)
+
+enc(my_list, "add_item.json")
